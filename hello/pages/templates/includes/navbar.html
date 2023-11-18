@@ -1,0 +1,7 @@
+{% load my_filter %}
+<nav>
+    <a href=" {% url 'url_index' %} ">Main</a>
+        {% for i, discr_zadiac in urls_list.items %}
+                <a href="{% url 'url_page_name' geturl=i %}">{{ discr_zadiac|split|first }}</a>
+        {% endfor %}
+</nav>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load my_filter %}
+{% block css_eddition %}<link rel="stylesheet" href="{% static 'pages/css/info.css' %}"> {% endblock %}
+    {% block title %}Zadiac for {{ zadiac_name|upper }}{% endblock %}
+
+    {% block content %}
+    {% include 'includes/navbar.html' %}
+
+    {% if zadiac_text is None %}
+        <p>Not found {{ zadiac_name|upper }}</p>
+    {% else %}
+        <h2>{{ zadiac_text|split|first }}</h2>
+        <h1>Это {{ zadiac_text }}</h1>
+    {% endif %}
+
+    {% endblock %}

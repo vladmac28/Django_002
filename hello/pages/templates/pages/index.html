@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_eddition %}<link rel="stylesheet" href="{% static 'pages/css/index.css' %}"> {% endblock %}
+    {% block title %}Menu{% endblock %}
+
+    {% block content %}
+    {% include 'includes/navbar.html' %}
+    <h1>my app</h1>
+        <ul>
+            {% for i in urls_list %}
+                <li><a href="{% url 'url_page_name' geturl=i %}">{{ forloop.counter0 }} {{ i|title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
